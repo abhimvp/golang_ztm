@@ -29,3 +29,35 @@
 .
 2024-12-14 12:08:07.992 [info] All tools successfully installed. You are ready to Go. :)
 ```
+
+---
+
+### Packages & Modules - Data Types - Strings/Runes
+
+- packages and modules will be encountered as soon as you start writing Go code.It's important to have an understanding of how they work.
+
+  - packages are Go's way of organizing code.Programs are written as one or more packages.Packages can be imported from Go package registry.Packages should be focused and perform a single thing.Good packages examples : Argument parsing, Drawing graphics. Handling HTTP requests.For each one of these packages, you would just want it to do the single task that it was designed for.And if you needed to do something else, you can just create a new package.
+  - To use a package , all we need to do is write the `import` keyword in our code followed by the name of the package within double quotes. `import ( . "name" , pk "namespace/packageName")`.
+  - modules are collection of packages.Created by having a `go.mod` file in the root directory of your project. can be managed by the Go CLI. Contains information about your project which includes dependencies, Go Version, package info. All Go projects have a `go.mod` file
+
+  ```
+  module example.com/practice <!-- we have module keyword followed by name of the module   -->
+
+  go 1.17 <!-- Go version -->
+
+  require(
+    github.com/alexflint/gp-arg v1.4.2
+    github.com/fatih/color v1.13.0
+  ) <!-- Require Block each one of the lines is going to be a package along with the version we're using within our code , color is the name of the package and github.com/fatih is namespace  -->
+  ```
+
+- Data Types Explained : All data in programs consists of binary numbers (0 or 1). A Data type is a way that the program can interpret the binary numbers. Numbers - 15 , letters - y and words - hello are all different data types.
+  - Go is a statically typed language. Data types must be provided by the programmer.Go uses type inference to determine what type of data it is working with means Data types only need to be provided in specific circumstances.Can always specify the type if desired.Compiler error if wrong type is used.This is how Go compiler is able to provide type safety.
+  - In Go , all primitive data types are numeric. This means that they're simply a stream of bytes.The type indicated in the code is simply a convention.It's possible that the data is invalid for the given type.Only applies when working with user input or manually manipulating the binary data.Go uses static typing, which is checked at compile time.Type aliases can be created to give new names to existing types. `type UserId int` , converting between types requires parentheses `UserId(5)`. the compiler uses `Type inference` which automatically determines which types to use.
+- Strings/Runes :
+  - Text Encoding -> Textual data in Go uses UTF-8 encoding. Encoding is a way to represent thousands of different symbols using code pages. code pages are tables which use the first few bytes of data to determine which page to use. Each symbol in the code page is called a code point.From the below image , if we look at lowercase `d` here , we'll see that we're at code point one and three , so create `d` it actually takes two bytes in this case and to create japanese characters it takes 3 bytes..etc
+    ![alt text](Images/image.png)
+  - In Go , when working with strings and runes , we're actually working with individual bytes , not letters themselves. so it's important to understand letters can consume more than one byte.
+  - Text in Go is represented using the Rune type.similar to char like in c.Rune is an alias for int32 , which is just a 32-bit integer.means you're actually just working with numbers whenever you're working with Rune.(Always a number: will print numeric value unless proper formatting is specified).Runes can represent any symbol and this includes letters,numbers and emoji.
+  - A String is a data type for storing multiple runes.Strings are just an array of bytes and a string length. There is no null termination with a Go String.When iterating a string, iteration occurs over bytes and bytes are not symbols. special iteration techniques are required to retrieve runes/symbols.
+  - Creation : Runes -> '1','w',`&` and Strings : "Amount is jabsdjk" AND rAW lITERAL: `Let's code in "Golang"\n`
