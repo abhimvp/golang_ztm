@@ -61,3 +61,23 @@
   - Text in Go is represented using the Rune type.similar to char like in c.Rune is an alias for int32 , which is just a 32-bit integer.means you're actually just working with numbers whenever you're working with Rune.(Always a number: will print numeric value unless proper formatting is specified).Runes can represent any symbol and this includes letters,numbers and emoji.
   - A String is a data type for storing multiple runes.Strings are just an array of bytes and a string length. There is no null termination with a Go String.When iterating a string, iteration occurs over bytes and bytes are not symbols. special iteration techniques are required to retrieve runes/symbols.
   - Creation : Runes -> '1','w',`&` and Strings : "Amount is jabsdjk" AND rAW lITERAL: `Let's code in "Golang"\n`
+
+### Go CLI
+
+- Go toolchain provides the go command line utility. This tool is used to: Update dependencies , Build and test projects , Manage artifacts , Format source code.
+- Everyday Go Commands:
+  - build : builds the project & emits an executable binary ( build is the command you'll want to use when you want to distribute your project )
+    - build -race : checks for concurrency problems
+  - run : runs the projects directly; no output executable
+  - mod : manages modules & dependencies
+    - mod tidy : updates dependencies
+  - test : runs the project's test suite
+  - fmt : formats all source files(usually automated with IDE)
+
+### Go Programming Fundamentals
+
+- variables
+- functions
+- operators
+- if..else
+- Loops - while - infinite 
