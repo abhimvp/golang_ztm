@@ -80,4 +80,19 @@
 - functions
 - operators
 - if..else
-- Loops - while - infinite 
+- Loops - while - infinite
+
+### Go programming : Types
+
+- `Structures` - allows data to be stored in groups , Similar to "class" in other programming languages. Each data point in the structure is called a `field`.Storing data in groups is usually more efficient. Possible to associate functionality with structures.Helps organize code and data.
+- `Arrays` - Arrays are a way to store multiple pieces of the same kind of data.Each peice of data is called `Element`.To access items in the array, an array index is used.Arrays are fixed size and cannot be resized.
+- `Slices` - Slices are companion types that work with arrays.They enable a "view" into an array.Views are dynamic and not fixed in size.Functions can accept a slice as a function parameter.any size array can be operated upon via slice.Slice takes a minimal ammount of memory.It just has an address that points into this existing array.you're not making a copy.All you're doing is having some metadata that just peeks into that original array which remains untouched.
+- ranges
+- `maps` - Maps are a commonly used data structure that stores data in Key-value pairs - Extremely high performance when the key is known - Unordered - data is stored in random order.
+- `pointers` - Memory: Function calls in Go are "pass by value". A copy of each function argument is made, regardless of size.Potentially slow for large data structures.More difficult to manage program state.This can be changed by using pointers. pointers are variables that `"point to"` memory . The value of the variable itself is a memory address.Accessing the data requires `dereferencing` the pointer.This allows changing values that exist elsewhere in the program.Creating pointer: `Asterisk(*)` "when used with a type" indicates the value is a pointer.`Ampersand(&)` creates a pointer from a variable.
+
+```
+value := 10
+var valuePtr *int //create a pointer to an integer
+valuePtr = &value // pointer to value - will have memory address and points to value variables.
+```
